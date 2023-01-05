@@ -30,6 +30,27 @@ namespace byteBankProject
 
         }
 
+        static void DeletarUsuario(List<string> cpfs, List<string> nomes, List<string> senhas, List<double> saldos)
+        {
+            Console.WriteLine("Digite o cpf da conta a ser deletada:");
+            string cpfDigitado = Console.ReadLine();
+            int indexParaDeletar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
+            Console.WriteLine($"Tem certeza que deseja excluir a conta com o cpf: {cpfDigitado}?");
+            Console.WriteLine("Digite S para proseguir ou N para finalizar a operação e voltar para o menu:");
+            string resposta = Console.ReadLine();
+
+            if(resposta == "S" || resposta == "s") {
+                cpfs.Remove(cpfDigitado);
+                nomes.RemoveAt(indexParaDeletar);
+                senhas.RemoveAt(indexParaDeletar);
+                saldos.RemoveAt(indexParaDeletar);
+                Console.WriteLine("Conta exlcuida com sucesso!");
+            }
+            else if(resposta == "N" || resposta == "n") { }
+            {
+                Console.WriteLine("Retornando para o menu.");
+            }
+        }
         static void MostrarUsuario(List<string> cpfs, List<string> nomes, List<double> saldos)
         {
             Console.WriteLine("Digite o cpf da conta para mais detalhes:");
@@ -74,7 +95,7 @@ namespace byteBankProject
                         RegistrarUsuario(cpfs, nomes, senhas, saldos);
                         break;
                     case 2:
-                        Console.WriteLine("testando, escolheu 2");                        
+                        DeletarUsuario(cpfs, nomes, senhas, saldos);
                             break;
                     case 3:
                         Console.WriteLine("testando, escolheu 3");
