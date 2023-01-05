@@ -22,8 +22,15 @@
             Console.WriteLine("testando, escolheu 1");
         }
 
-        static void RegistarUsuario(List<string> cpfs, List<string> nomes, List<string> senhas, List<double> saldos)
+        static void RegistrarUsuario(List<string> cpfs, List<string> nomes, List<string> senhas, List<double> saldos)
         {
+            Console.WriteLine("Primeiramente, digite seu cpf:");
+            cpfs.Add(Console.ReadLine());
+            Console.WriteLine("Digite seu nome completo:");
+            nomes.Add(Console.ReadLine());
+            Console.WriteLine("Crie uma senha para acesso:");
+            senhas.Add(Console.ReadLine());
+            saldos.Add(0.0);
 
         }
         public static void Main(string[] args)
@@ -54,7 +61,7 @@
                         Console.WriteLine("Estou encerrando o programa...");
                         break;
                     case 1:
-                        testandoOption1();
+                        RegistrarUsuario(cpfs, nomes, senhas, saldos);
                         break;
                     case 2:
                         Console.WriteLine("testando, escolheu 2");                        
