@@ -1,4 +1,6 @@
-﻿namespace byteBankProject
+﻿using System;
+
+namespace byteBankProject
 {
     public class Program
     {
@@ -26,6 +28,20 @@
             senhas.Add(Console.ReadLine());
             saldos.Add(0.0);
 
+        }
+
+        static void MostrarUsuario(List<string> cpfs, List<string> nomes, List<double> saldos)
+        {
+            Console.WriteLine("Digite o cpf da conta para mais detalhes:");
+            string cpfDigitado = Console.ReadLine();
+            int indexParaMostrar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
+
+            MostrarConta(indexParaMostrar, cpfs, nomes, saldos);
+        }
+
+        static void MostrarConta(int i, List<string> cpfs, List<string> nomes, List<double> saldos)
+        {
+            Console.WriteLine($"CPF = {cpfs[i]} | Nome = {nomes[i]} | Saldo = R${saldos[i]:F2}");
         }
         public static void Main(string[] args)
         {
@@ -64,7 +80,7 @@
                         Console.WriteLine("testando, escolheu 3");
                         break;
                     case 4:
-                        Console.WriteLine("testando, escolheu 4");
+                        MostrarUsuario(cpfs, nomes, saldos);
                         break;
                     case 5:
                         Console.WriteLine("testando, escolheu 5");
