@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\repos\\ByteBank\\ByteBank\\ByteBank.csproj": {}
+    "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\byteBank\\ByteBank-Ima-Learning\\ByteBank\\ByteBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\repos\\ByteBank\\ByteBank\\ByteBank.csproj": {
+    "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\byteBank\\ByteBank-Ima-Learning\\ByteBank\\ByteBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\repos\\ByteBank\\ByteBank\\ByteBank.csproj",
+        "projectUniqueName": "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\byteBank\\ByteBank-Ima-Learning\\ByteBank\\ByteBank.csproj",
         "projectName": "ByteBank",
-        "projectPath": "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\repos\\ByteBank\\ByteBank\\ByteBank.csproj",
+        "projectPath": "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\byteBank\\ByteBank-Ima-Learning\\ByteBank\\ByteBank.csproj",
         "packagesPath": "C:\\Users\\isaac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\repos\\ByteBank\\ByteBank\\obj\\",
+        "outputPath": "C:\\Users\\isaac\\OneDrive\\Área de Trabalho\\byteBank\\ByteBank-Ima-Learning\\ByteBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,15 @@
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\bin\Debug\net6.0\ByteBank.exe
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\bin\Debug\net6.0\ByteBank.deps.json
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\bin\Debug\net6.0\ByteBank.runtimeconfig.json
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\bin\Debug\net6.0\ByteBank.dll
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\bin\Debug\net6.0\ByteBank.pdb
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.csproj.AssemblyReference.cache
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.AssemblyInfoInputs.cache
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.AssemblyInfo.cs
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.dll
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\refint\ByteBank.dll
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.pdb
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ByteBank.genruntimeconfig.cache
+C:\Users\isaac\OneDrive\Área de Trabalho\byteBank\ByteBank-Ima-Learning\ByteBank\obj\Debug\net6.0\ref\ByteBank.dll

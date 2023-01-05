@@ -2,8 +2,87 @@
 {
     public class Program
     {
+        static void MenuOptions()
+        {
+            Console.WriteLine("1 - Adicionar um novo usuário");
+            Console.WriteLine("2 - Deletar um usuário");
+            Console.WriteLine("3 - Mostrar todas as contas registradas");
+            Console.WriteLine("4 - Mostrar detalhes de um usuário");
+            Console.WriteLine("5 - Quantia armazenada no banco");
+            Console.WriteLine("6 - Sacar uma quantia");
+            Console.WriteLine("7 - Depositar uma quantia");
+            Console.WriteLine("8 - Transferir uma quantia");
+            Console.WriteLine("0 - Sair do programa");
+            Console.Write("Digite uma opção: ");
+        }
+
+        //criando pra testar a chamada da função no switch case
+        static void testandoOption1()
+        {
+            Console.WriteLine("testando, escolheu 1");
+        }
+
+        static void RegistarUsuario(List<string> cpfs, List<string> nomes, List<string> senhas, List<double> saldos)
+        {
+
+        }
         public static void Main(string[] args)
         {
+            Console.WriteLine("Iniciando os recursos... ");
+            Console.WriteLine("Recursos iniciados, por favor escolha uma opção.");
+
+            List<string> cpfs = new List<string>();
+            List<string> nomes = new List<string>();
+            List<string> senhas = new List<string>();
+            List<double> saldos = new List<double>();
+            
+
+            int option;
+
+            do
+            {
+                MenuOptions();
+                option = int.Parse(Console.ReadLine());
+
+                Console.WriteLine(".....................");
+
+                // testando o Do/While e o Switch/Case
+
+                switch (option)
+                {
+                    case 0:
+                        Console.WriteLine("Estou encerrando o programa...");
+                        break;
+                    case 1:
+                        testandoOption1();
+                        break;
+                    case 2:
+                        Console.WriteLine("testando, escolheu 2");                        
+                            break;
+                    case 3:
+                        Console.WriteLine("testando, escolheu 3");
+                        break;
+                    case 4:
+                        Console.WriteLine("testando, escolheu 4");
+                        break;
+                    case 5:
+                        Console.WriteLine("testando, escolheu 5");
+                        break;
+                    case 6:
+                        Console.WriteLine("testando, escolheu 6");
+                        break;
+                    case 7:
+                        Console.WriteLine("testando, escolheu 7");
+                        break;
+                    case 8:
+                        Console.WriteLine("testando, escolheu 8");
+                        break;
+                }
+
+                Console.WriteLine(".....................");
+
+            } while (option != 0);
+
 
         }
     }
