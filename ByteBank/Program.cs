@@ -16,12 +16,6 @@
             Console.Write("Digite uma opção: ");
         }
 
-        //criando pra testar a chamada da função no switch case
-        static void testandoOption1()
-        {
-            Console.WriteLine("testando, escolheu 1");
-        }
-
         static void RegistrarUsuario(List<string> cpfs, List<string> nomes, List<string> senhas, List<double> saldos)
         {
             Console.WriteLine("Primeiramente, digite seu cpf:");
