@@ -5,6 +5,7 @@ namespace byteBankProject
     public class TestaLogin
     {
         public static bool isLogged = false;
+        public static string cpfLogado = "";
     }
     public class Program
     {
@@ -62,6 +63,7 @@ namespace byteBankProject
             Console.WriteLine("Digite o seu cpf:");
             string cpfDigitado = Console.ReadLine();
             int conferirCpf = cpfs.FindIndex(cpf => cpf == cpfDigitado);
+            TestaLogin.cpfLogado = cpfDigitado;
             Console.WriteLine("Digite a sua senha:");
             string senhaDigitada = Console.ReadLine();
             int conferirSenha = senhas.FindIndex(senha => senha == senhaDigitada);
@@ -70,8 +72,7 @@ namespace byteBankProject
             if(senhaDigitada == senhas[conferirSenha] & cpfDigitado == cpfs[conferirCpf])
             {
                 Console.WriteLine("Login feito com sucesso!");
-                TestaLogin.isLogged = true;
-                
+                TestaLogin.isLogged = true; 
             }
             else
             {
@@ -102,15 +103,15 @@ namespace byteBankProject
             Console.WriteLine($"CPF = {cpfs[i]} | Nome = {nomes[i]} | Saldo = R${saldos[i]:F2}");
         }
 
-        static void MostrarTodasAsContas(List<string> cpfs, List<string> titulares, List<double> saldos)
+        static void MostrarTodasAsContas(List<string> cpfs, List<string> nomes, List<double> saldos)
         {
             for (int i = 0; i < cpfs.Count; i++)
             {
-                MostrarConta(i, cpfs, titulares, saldos);
+                MostrarConta(i, cpfs, nomes, saldos);
             }
         }
 
-        static void Depositar(List<string> cpfs, List<string> titulares, List<double> saldos)
+        static void Depositar(List<string> cpfs, List<double> saldos)
         {
          
             if(TestaLogin.isLogged == true)
@@ -128,6 +129,22 @@ namespace byteBankProject
             }
                       
 
+        }
+
+        static void SacarQuantia(List<string> cpfs, List<double> saldos)
+        {
+            int conferirCpf = cpfs.FindIndex(cpf => cpf == TestaLogin.cpfLogado);
+            if (TestaLogin.isLogged = true & TestaLogin.cpfLogado == cpfs[conferirCpf])
+            {
+                Console.WriteLine("Digite a quantia a sacar");
+                double saque = double.Parse(Console.ReadLine());
+                double novoSaldo = saldos[conferirCpf] - saque;
+                saldos[conferirCpf] = novoSaldo;
+            }
+            else
+            {
+                Console.WriteLine("");
+            }
         }
         public static void Main(string[] args)
         {
@@ -170,10 +187,10 @@ namespace byteBankProject
                         MostrarUsuario(cpfs, nomes, saldos);
                         break;
                     case 5:
-                        Console.WriteLine("testando, escolheu 6");
+                        SacarQuantia(cpfs, saldos);
                         break;
                     case 6:
-                        Depositar(cpfs, nomes, saldos);
+                        Depositar(cpfs, saldos);
                         break;
                     case 7:
                         Console.WriteLine("testando, escolheu 8");
