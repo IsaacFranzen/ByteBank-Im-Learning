@@ -64,6 +64,25 @@ namespace byteBankProject
         {
             Console.WriteLine($"CPF = {cpfs[i]} | Nome = {nomes[i]} | Saldo = R${saldos[i]:F2}");
         }
+
+        static void MostrarTodasAsContas(List<string> cpfs, List<string> titulares, List<double> saldos)
+        {
+            for (int i = 0; i < cpfs.Count; i++)
+            {
+                MostrarConta(i, cpfs, titulares, saldos);
+            }
+        }
+
+        static void Depositar(List<string> cpfs, List<string> titulares, List<double> saldos)
+        {
+            Console.WriteLine("Digite o cpf da conta para fazer o depósito:");
+            string cpfDigitado = Console.ReadLine();
+            int indexParaDepositar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
+            Console.WriteLine("Digite a quantia a ser depositada:");
+            double quantiaAdepositar = double.Parse(Console.ReadLine());
+            saldos[indexParaDepositar] = quantiaAdepositar;
+
+        }
         public static void Main(string[] args)
         {
             Console.WriteLine("Iniciando os recursos... ");
@@ -98,7 +117,7 @@ namespace byteBankProject
                         DeletarUsuario(cpfs, nomes, senhas, saldos);
                             break;
                     case 3:
-                        Console.WriteLine("testando, escolheu 3");
+                        MostrarTodasAsContas(cpfs, nomes, saldos);
                         break;
                     case 4:
                         MostrarUsuario(cpfs, nomes, saldos);
@@ -110,7 +129,7 @@ namespace byteBankProject
                         Console.WriteLine("testando, escolheu 6");
                         break;
                     case 7:
-                        Console.WriteLine("testando, escolheu 7");
+                        Depositar(cpfs, nomes, saldos);
                         break;
                     case 8:
                         Console.WriteLine("testando, escolheu 8");
