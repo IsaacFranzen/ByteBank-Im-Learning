@@ -2,10 +2,14 @@
 
 namespace byteBankProject
 {
+    public class TestaLogin
+    {
+        public static bool isLogged = false;
+    }
     public class Program
     {
         static void MenuOptions()
-        {
+        {   
             Console.WriteLine("1 - Adicionar um novo usuário");
             Console.WriteLine("2 - Deletar um usuário");
             Console.WriteLine("3 - Mostrar todas as contas registradas");
@@ -32,6 +36,7 @@ namespace byteBankProject
 
         static void DeletarUsuario(List<string> cpfs, List<string> nomes, List<string> senhas, List<double> saldos)
         {
+
             Console.WriteLine("Digite o cpf da conta a ser deletada:");
             string cpfDigitado = Console.ReadLine();
             int indexParaDeletar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
@@ -65,6 +70,7 @@ namespace byteBankProject
             if(senhaDigitada == senhas[conferirSenha] & cpfDigitado == cpfs[conferirCpf])
             {
                 Console.WriteLine("Login feito com sucesso!");
+                TestaLogin.isLogged = true;
                 
             }
             else
@@ -107,12 +113,20 @@ namespace byteBankProject
         static void Depositar(List<string> cpfs, List<string> titulares, List<double> saldos)
         {
          
+            if(TestaLogin.isLogged == true)
+            {
                 Console.WriteLine("Digite o cpf da conta para fazer o depósito:");
                 string cpfDigitado = Console.ReadLine();
                 int indexParaDepositar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
                 Console.WriteLine("Digite a quantia a ser depositada:");
                 double quantiaAdepositar = double.Parse(Console.ReadLine());
-                saldos[indexParaDepositar] = quantiaAdepositar;         
+                saldos[indexParaDepositar] = quantiaAdepositar;
+            }
+            else
+            {
+                Console.WriteLine("Faça o login para realizar essa ação.");
+            }
+                      
 
         }
         public static void Main(string[] args)
@@ -171,7 +185,6 @@ namespace byteBankProject
                 Console.WriteLine(".....................");
 
             } while (option != 0);
-
 
         }
     }
