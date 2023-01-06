@@ -176,7 +176,7 @@ namespace byteBankProject
                 Console.WriteLine("Para concluir digite sua senha:");
                 string senhaDigitada = Console.ReadLine();
                 int conferirSenha = senhas.FindIndex(senha => senha == senhaDigitada);
-                if (senhaDigitada == senhas[conferirSenha] & saldos[conferirCpf] >= quantiaParaTransferir)
+                if (senhaDigitada == senhas[conferirSenha] & saldos[conferirCpf] <= quantiaParaTransferir)
                 {
                     saldos[conferirCpfEscolhido] = quantiaParaTransferir;
                     saldos[conferirCpf] -= quantiaParaTransferir;
