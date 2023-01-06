@@ -19,6 +19,7 @@ namespace byteBankProject
             Console.WriteLine("6 - Depositar uma quantia");
             Console.WriteLine("7 - Transferir uma quantia");
             Console.WriteLine("8 - Logar na conta");
+            Console.WriteLine("9 - Fazer logout");
             Console.WriteLine("0 - Sair do programa");
             Console.Write("Digite uma opção: ");
         }
@@ -76,7 +77,7 @@ namespace byteBankProject
             }
             else
             {
-                Console.WriteLine("Cpf ou senha incorretos, tentar novamente? 1 - sim  2 - não");
+                Console.WriteLine("Cpf ou senha incorretos, tentar novamente? 1 - sim || 2 - não");
                 int resposta = int.Parse(Console.ReadLine());
                 
                 if(resposta == 1)
@@ -87,6 +88,21 @@ namespace byteBankProject
                     Console.WriteLine("Retornando para o menu.");
                 }
 
+            }
+        }
+
+        static void Logout()
+        {
+            Console.WriteLine("Deseja deslogar? 1 - sim || 2 -não");
+            int resposta = int.Parse(Console.ReadLine());
+            if(resposta == 1)
+            {
+                TestaLogin.isLogged = false;
+                Console.WriteLine("Logout feito com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Retornando para o menu");
             }
         }
         static void MostrarUsuario(List<string> cpfs, List<string> nomes, List<double> saldos)
@@ -172,7 +188,7 @@ namespace byteBankProject
                 switch (option)
                 {
                     case 0:
-                        Console.WriteLine("Estou encerrando o programa...");
+                        Console.WriteLine("Encerrando o programa...");
                         break;
                     case 1:
                         RegistrarUsuario(cpfs, nomes, senhas, saldos);
@@ -196,7 +212,11 @@ namespace byteBankProject
                         Console.WriteLine("testando, escolheu 8");
                         break;
                     case 8:
-                        fazerLogin(cpfs, senhas); break;
+                        fazerLogin(cpfs, senhas); 
+                        break;
+                    case 9:
+                        Logout();
+                        break;
                 }
 
                 Console.WriteLine(".....................");
