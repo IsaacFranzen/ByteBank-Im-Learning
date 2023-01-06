@@ -5,7 +5,7 @@ namespace byteBankProject
     public class TestaLogin
     {
         public static bool isLogged = false;
-        public static string cpfLogado = "";
+        public static string cpfLogado = " ";
     }
     public class Program
     {
@@ -150,7 +150,7 @@ namespace byteBankProject
         static void SacarQuantia(List<string> cpfs, List<double> saldos)
         {
             int conferirCpf = cpfs.FindIndex(cpf => cpf == TestaLogin.cpfLogado);
-            if (TestaLogin.isLogged = true & TestaLogin.cpfLogado == cpfs[conferirCpf])
+            if (TestaLogin.isLogged == true & TestaLogin.cpfLogado == cpfs[conferirCpf])
             {
                 Console.WriteLine("Digite a quantia a sacar");
                 double saque = double.Parse(Console.ReadLine());
@@ -160,6 +160,32 @@ namespace byteBankProject
             else
             {
                 Console.WriteLine("");
+            }
+        }
+
+        static void Transferir(List<string> cpfs, List<double> saldos, List<string> senhas)
+        {
+            int conferirCpf = cpfs.FindIndex(cpf => cpf == TestaLogin.cpfLogado);
+            if (TestaLogin.isLogged == true & TestaLogin.cpfLogado == cpfs[conferirCpf])
+            {
+                Console.WriteLine("Digite o cpf da conta para a qual deseja transferir:");
+                string cpfDaContaEscolhida = Console.ReadLine();
+                int conferirCpfEscolhido = cpfs.FindIndex(cpf => cpf == cpfDaContaEscolhida);
+                Console.WriteLine("Digite a quantia a ser transferida:");
+                double quantiaParaTransferir = double.Parse(Console.ReadLine());
+                Console.WriteLine("Para concluir digite sua senha:");
+                string senhaDigitada = Console.ReadLine();
+                int conferirSenha = senhas.FindIndex(senha => senha == senhaDigitada);
+                if (senhaDigitada == senhas[conferirSenha] & saldos[conferirCpf] >= quantiaParaTransferir)
+                {
+                    saldos[conferirCpfEscolhido] = quantiaParaTransferir;
+                    saldos[conferirCpf] -= quantiaParaTransferir;
+                    Console.WriteLine("Transferencia feita com sucesso!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Não foi possivel transferir");
             }
         }
         public static void Main(string[] args)
@@ -209,7 +235,7 @@ namespace byteBankProject
                         Depositar(cpfs, saldos);
                         break;
                     case 7:
-                        Console.WriteLine("testando, escolheu 8");
+                        Transferir(cpfs, saldos, senhas);
                         break;
                     case 8:
                         fazerLogin(cpfs, senhas); 
