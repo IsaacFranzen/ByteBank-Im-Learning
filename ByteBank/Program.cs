@@ -10,10 +10,10 @@ namespace byteBankProject
             Console.WriteLine("2 - Deletar um usuário");
             Console.WriteLine("3 - Mostrar todas as contas registradas");
             Console.WriteLine("4 - Mostrar detalhes de um usuário");
-            Console.WriteLine("5 - Quantia armazenada no banco");
-            Console.WriteLine("6 - Sacar uma quantia");
-            Console.WriteLine("7 - Depositar uma quantia");
-            Console.WriteLine("8 - Transferir uma quantia");
+            Console.WriteLine("5 - Sacar uma quantia");
+            Console.WriteLine("6 - Depositar uma quantia");
+            Console.WriteLine("7 - Transferir uma quantia");
+            Console.WriteLine("8 - Logar na conta");
             Console.WriteLine("0 - Sair do programa");
             Console.Write("Digite uma opção: ");
         }
@@ -51,6 +51,37 @@ namespace byteBankProject
                 Console.WriteLine("Retornando para o menu.");
             }
         }
+
+        static void fazerLogin(List<string> cpfs, List<string> senhas)
+        {
+            Console.WriteLine("Digite o seu cpf:");
+            string cpfDigitado = Console.ReadLine();
+            int conferirCpf = cpfs.FindIndex(cpf => cpf == cpfDigitado);
+            Console.WriteLine("Digite a sua senha:");
+            string senhaDigitada = Console.ReadLine();
+            int conferirSenha = senhas.FindIndex(senha => senha == senhaDigitada);
+            // Console.WriteLine($"{conferirSenha} --- senha digitada {senhaDigitada}");
+            
+            if(senhaDigitada == senhas[conferirSenha] & cpfDigitado == cpfs[conferirCpf])
+            {
+                Console.WriteLine("Login feito com sucesso!");
+                
+            }
+            else
+            {
+                Console.WriteLine("Cpf ou senha incorretos, tentar novamente? 1 - sim  2 - não");
+                int resposta = int.Parse(Console.ReadLine());
+                
+                if(resposta == 1)
+                {
+                    fazerLogin(cpfs, senhas);
+                }else
+                {
+                    Console.WriteLine("Retornando para o menu.");
+                }
+
+            }
+        }
         static void MostrarUsuario(List<string> cpfs, List<string> nomes, List<double> saldos)
         {
             Console.WriteLine("Digite o cpf da conta para mais detalhes:");
@@ -75,12 +106,13 @@ namespace byteBankProject
 
         static void Depositar(List<string> cpfs, List<string> titulares, List<double> saldos)
         {
-            Console.WriteLine("Digite o cpf da conta para fazer o depósito:");
-            string cpfDigitado = Console.ReadLine();
-            int indexParaDepositar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
-            Console.WriteLine("Digite a quantia a ser depositada:");
-            double quantiaAdepositar = double.Parse(Console.ReadLine());
-            saldos[indexParaDepositar] = quantiaAdepositar;
+         
+                Console.WriteLine("Digite o cpf da conta para fazer o depósito:");
+                string cpfDigitado = Console.ReadLine();
+                int indexParaDepositar = cpfs.FindIndex(cpf => cpf == cpfDigitado);
+                Console.WriteLine("Digite a quantia a ser depositada:");
+                double quantiaAdepositar = double.Parse(Console.ReadLine());
+                saldos[indexParaDepositar] = quantiaAdepositar;         
 
         }
         public static void Main(string[] args)
@@ -92,6 +124,7 @@ namespace byteBankProject
             List<string> nomes = new List<string>();
             List<string> senhas = new List<string>();
             List<double> saldos = new List<double>();
+            int verificaLogin = 0;
             
 
             int option;
@@ -123,17 +156,16 @@ namespace byteBankProject
                         MostrarUsuario(cpfs, nomes, saldos);
                         break;
                     case 5:
-                        Console.WriteLine("testando, escolheu 5");
-                        break;
-                    case 6:
                         Console.WriteLine("testando, escolheu 6");
                         break;
-                    case 7:
+                    case 6:
                         Depositar(cpfs, nomes, saldos);
                         break;
-                    case 8:
+                    case 7:
                         Console.WriteLine("testando, escolheu 8");
                         break;
+                    case 8:
+                        fazerLogin(cpfs, senhas); break;
                 }
 
                 Console.WriteLine(".....................");
